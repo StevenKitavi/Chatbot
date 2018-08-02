@@ -19,5 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     
     url(r'^admin/', admin.site.urls),
-    url(r'^chat/', include('Talko.urls')),
+    url(r'^Talko/', include('Talko.urls')),
 ]
