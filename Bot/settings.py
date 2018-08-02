@@ -73,7 +73,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Bot.wsgi.application'
+#configure the ASGI
+#The Asynchronous server gateway 
+# configure the Channel layer ---A kind of a communicatioon system
+# It allows multiple consumer instances to talk with each other and with other parts
+# of django
 ASGI_APPLICATION ='Bot.routing.application'
+CHANNEL_LAYERS = {
+    'default' : {
+        'BACKEND' : 'channels_redis.core.RedisChannelLayer',
+        'CONFIG' : {
+            "hosts" : [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 
 # Database
